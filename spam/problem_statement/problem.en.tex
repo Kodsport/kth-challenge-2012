@@ -1,0 +1,39 @@
+\problemname{Spam Filter}
+\illustration{0.3}{spam.jpg}{Photo by \href{https://www.flickr.com/photos/jeepersmedia/14014574484/in/photolist-nmqmJy-ym8dnV-ym27yU-xFKTsV-ym27j5-no9xSV-7fTCpn-yCD2gB-nmqnEG-98zP97-6XmzT8-no9x2X-3ei882-nm6EZX-no9wVe-bQUPqg-5BLW6G-69RAFh-77g1rz-teYAE-9i4Ken-5UGH4w-25fM1F-5W2YE1-7WCyEc-7WCyG4-fKRqS-8AeGgj-5kFD98-25fM1r-6HD6q5-bq1gWk-5edh4w-5V6dce-4tkzcR-4wryaZ-8HRzKd-5BbPkc-7NdeUG-8zo9EP-8Ywrzb-5BbPza-25fLYX-2ihU9t-25fM1a-4cGdeu-6xuFAN-tuDnR-7N9eXr-7BuiiD}{Mike Mozart}, \href{https://creativecommons.org/licenses/by/2.0/}{CC BY 2.0}}
+
+\noindent
+Goo is working in a well-known Slovak antivirus company
+which unfortunately cannot be named. In addition to antivirus
+software, they are developing a spam filter. Recently, Goo has
+made a few improvements to the filter and he wants to demonstrate
+his progress to his boss. As you can imagine, demonstrating lowlevel ideas of your implementation is not a good way to impress
+your boss, so Goo instead decided to make a presentation with
+plenty of graphs showing filtering results. The company has a
+huge database of e-mails and each e-mail is marked as a spam or
+ham (i.e. not spam). These e-mails were all correctly marked by
+people -- every time someone in the company receives an e-mail,
+he marks it as either spam or ham and adds it to the database.
+
+The success of Goo's program can be measured in a simple
+way. Goo ran his program on all e-mails in the database. For each
+message he noted if his program correctly decided whether the message was spam or ham. The messages were
+processed in order from the oldest to the newest one. To impress the boss, Goo wants to select e-mails from a
+period of time and calculate the success rate only for this period. Of course, a period containing only one e-mail
+won’t impress anyone, so Goo wants to choose a period which is long enough.
+
+
+\section*{Task}
+You are given a sequence of test results and a number $k$. Your task is to find a continuous subsequence of length at
+least $k$ which has the highest possible success rate among all such subsequences. The success rate of a subsequence
+is defined as the number of successfully classified e-mails divided by the length of the subsequence.
+
+\section*{Input}
+On the first line there is an integer $k$ ($1 \le k \le 100$) denoting the minimal subsequence length. The second line
+contains a string consisting of characters \texttt{0} and \texttt{1}, denoting answers of the program for each e-mail in the database.
+Number \texttt{1} indicates that Goo’s program gave a correct answer and \texttt{0} that it failed. The length of the string will be
+at least $k$ and at most $100\,000$ characters.
+
+\section*{Output}
+The first and only line of output should consist of two integers $f$ and $l$, separated by a single space.
+The integer $f$ is the $1$-based index of the first element of subsequence with the best success rate and $l$ is its length.
+If there are multiple optimal solutions, you can output any one of them.
